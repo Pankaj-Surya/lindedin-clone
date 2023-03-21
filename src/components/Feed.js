@@ -86,10 +86,10 @@ function Feed() {
         e.preventDefault();
         try {
             const docRef = await addDoc(collection(db,"posts"),{
-                name : user.displayName,
-                description : user.email,
+                name : user?.displayName,
+                description : user?.email,
                 message : input,
-                photoUrl : user.photoUrl || "",
+                photoUrl : user?.photoUrl || "",
                 timestamp : serverTimestamp()
             })
             console.log("Document written with ID: ", docRef.id);
